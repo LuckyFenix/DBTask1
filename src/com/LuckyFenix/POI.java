@@ -1,5 +1,6 @@
 package com.LuckyFenix;
 
+import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 
 import java.io.*;
@@ -33,7 +34,7 @@ public class POI
         return workbook;
     }
 
-    public boolean writeWorkbook(XSSFWorkbook workbook)
+    public boolean writeWorkbook(Workbook workbook)
     {
         OutputStream fileOut;
         try
