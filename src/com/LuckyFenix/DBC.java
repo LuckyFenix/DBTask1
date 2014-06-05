@@ -51,9 +51,9 @@ public class DBC
         }
     }
 
-    public List getTableColumns(String tableName)
+    public List<String> getTableColumns(String tableName)
     {
-        List columns = new ArrayList<>();
+        List<String> columns = new ArrayList<>();
         try
         {
             DBC dbc = new DBC(dbName);
@@ -122,7 +122,7 @@ public class DBC
         return true;
     }
 
-    public boolean addRow(List list)
+    private boolean addRow(List list)
     {
         return addRow(list, tableName);
     }
@@ -144,7 +144,7 @@ public class DBC
             ResultSet rs = dbc.st.executeQuery("SELECT * FROM `" + tableName + "`;");
             while (rs.next())
             {
-                List list = new ArrayList<>();
+                List<String> list = new ArrayList<>();
                 list.add(rs.getString("id"));
                 list.add(rs.getString("login"));
                 list.add(rs.getString("password"));

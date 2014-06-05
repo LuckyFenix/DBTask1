@@ -29,6 +29,11 @@ public class POI
         }
     }
 
+    public POI()
+    {
+        workbook = new XSSFWorkbook();
+    }
+
     public XSSFWorkbook getWorkbook()
     {
         return workbook;
@@ -48,5 +53,10 @@ public class POI
             return false;
         }
         return true;
+    }
+
+    public void setFile(String file)
+    {
+        this.file = new File(file);
     }
 }
